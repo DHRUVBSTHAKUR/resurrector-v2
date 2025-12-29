@@ -143,6 +143,8 @@ uv run benchmark.py
 - [x] SOTA Speed: Migration to Gemini 2.0 Flash
 - [x] Voice Mode: Call the on-call engineer when a fix is merged (Twilio integration ready)
 - [x] GitHub Integration: Auto-open PRs on repository issues
+- [ ] **v3.0:** Web Dashboard (Next.js) for real-time agent monitoring
+- [ ] **Expansion:** Support for compiled languages (C++/Rust)
 
 ## 📜 License
 
