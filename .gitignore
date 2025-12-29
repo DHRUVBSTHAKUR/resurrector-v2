@@ -1,0 +1,16 @@
+# Security (NEVER PUSH THESE)
+.env
+.env.local
+
+# Python / UV
+__pycache__/
+*.py[cod]
+.venv/
+uv.lock
+
+# Mac System Files
+.DS_Store
+
+# Logs & Traces
+logs/
+*.log

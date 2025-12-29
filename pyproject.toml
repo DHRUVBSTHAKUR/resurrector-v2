@@ -1,0 +1,24 @@
+[project]
+name = "resurrector-v2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "arize-phoenix>=12.27.0",
+    "arize-phoenix-otel>=0.14.0",
+    "docker>=7.1.0",
+    "gitpython>=3.1.45",
+    "google-genai>=1.56.0",
+    "google-generativeai>=0.8.6",
+    "langchain>=1.2.0",
+    "langchain-google-genai>=4.1.2",
+    "langgraph>=1.0.5",
+    "openinference-instrumentation-google-genai>=0.1.8",
+    "openinference-instrumentation-langchain>=0.1.57",
+    "pygithub>=2.8.1",
+    "python-dotenv>=1.2.1",
+    "streamlit>=1.52.2",
+    "streamlit-autorefresh>=1.0.1",
+    "twilio>=9.9.0",
+]
