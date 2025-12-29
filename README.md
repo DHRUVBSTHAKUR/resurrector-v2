@@ -30,7 +30,6 @@ Modern CI/CD pipelines are fragile. A missing dependency, a forgotten colon, or 
 
 This isn't a simple chatbot. It is a **Self-Correcting Reasoning Loop** built on **LangGraph**.
 
-```mermaid
 graph TD
     Failure([🔥 Pipeline Failure]) --> Junior[👷‍♂️ Junior Agent\n(Execution)]
     Junior -->|Reads Logs & Edits Code| Sandbox[🐳 Docker Sandbox]
