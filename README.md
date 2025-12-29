@@ -9,7 +9,7 @@
 
 **An autonomous AI workforce that hunts bugs, patches code, and audits itself—while you sleep.**
 
-[View Traces](http://localhost:6006) • [Report Bug](https://github.com/DHRUVBSTHAKUR/resurrector-v2/issues)
+[View Traces](#-observability-the-x-ray) • [Report Bug](https://github.com/DHRUVBSTHAKUR/resurrector-v2/issues)
 
 ---
 
