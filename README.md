@@ -47,6 +47,10 @@ flowchart TD
     style Security fill:#fff9c4,stroke:#fbc02d,color:#000
     style Sandbox fill:#f3e5f5,stroke:#4a148c,color:#000
 ```
+## 🎛️ Mission Control Center
+I built a dedicated dashboard to monitor the autonomous workforce in real-time. It tracks token usage, accumulated costs (USD), and live reasoning logs as the agents work.
+
+![Autonomous Control Dashboard](assets/dashboard_ui.png)
 
 ### 🎭 The Cast
 1.  **👷‍♂️ Agent A: The Junior DevOps (Execution)**
@@ -96,11 +100,13 @@ resurrector-v2/
 
 
 ## 🔬 Observability (The "X-Ray")
-Every thought, tool call, and state transition is traced live via **Arize Phoenix**.
+Every thought, tool call, and state transition is traced live via **Arize Phoenix**. This allows for deep inspection of "why" an agent failed or succeeded.
 
-* **Green Checkmarks:** Successful reasoning steps.
-* **Red Exclamations:** Failed attempts (automatically retried).
-* **Latency P50:** 1.3 seconds.
+![Arize Phoenix Trace](assets/phoenix_trace.png)
+
+* **Green Checkmarks:** Successful reasoning steps & tool execution.
+* **Latency Tracking:** P50 of ~1.3s ensures rapid feedback loops.
+* **Cost Monitoring:** Detailed token counting per step (<$0.01 per fix).
 
 ---
 
