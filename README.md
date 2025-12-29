@@ -16,7 +16,7 @@
 ### 🎥 Watch Level 4 Autonomy in Action
 *The agent detects a `ZeroDivisionError`, attempts a fix, gets REJECTED by the Security Auditor, auto-corrects, and passes on the second try.*
 
-![Resurrector Demo](PASTE_YOUR_DIRECT_GIF_LINK_HERE)
+![Resurrector Demo](https://github.com/DHRUVBSTHAKUR/resurrector-v2/issues/1#issue-3768218921)
 
 </div>
 
