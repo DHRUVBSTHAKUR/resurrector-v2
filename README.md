@@ -30,24 +30,76 @@ Modern CI/CD pipelines are fragile. A missing dependency, a forgotten colon, or 
 
 This isn't a simple chatbot. It is a **Self-Correcting Reasoning Loop** built on **LangGraph**.
 
-```mermaid
-graph TD
-    Failure([🔥 Pipeline Failure]) --> Junior[👷‍♂️ Junior Agent\n(Execution)]
-    Junior -->|Reads Logs & Edits Code| Sandbox[🐳 Docker Sandbox]
-    Sandbox -->|Returns stdout/stderr| Junior
-    Junior -->|Submits Fix Proposal| Security{🛡️ Security Audit\n(Principal Engineer)}
-    Security -->|❌ REJECT (Unsafe/Untested)| Junior
-    Security -->|✅ APPROVE| Merge([🚀 Merge Fix & Notify])
-    
-    style Junior fill:#e1f5fe,stroke:#01579b,color:#000
-    style Security fill:#fff9c4,stroke:#fbc02d,color:#000
-    style Sandbox fill:#f3e5f5,stroke:#4a148c,color:#000
+### 🎭 The Cast
+1.  **👷‍♂️ Agent A: The Junior DevOps (Execution)**
+    * **Role:** The "Hands." Reads `stderr` logs, locates files, and injects fixes.
+    * **Constraint:** Must provide "Proof of Work" (successful execution logs) before submitting.
+    * **Engine:** `Gemini 2.0 Flash` (P50 Latency: 1.3s).
 
-🎭 The Cast👷‍♂️ Agent A: The Junior DevOps (Execution)Role: The "Hands." Reads stderr logs, locates files, and injects fixes.Constraint: Must provide "Proof of Work" (successful execution logs) before submitting.Engine: Gemini 2.0 Flash (P50 Latency: 1.3s).🛡️ Agent B: The Principal Security Engineer (Audit)Role: The "Eyes." Reviews the PR for security risks (e.g., rm -rf, infinite loops).Power: Can REJECT the fix and force Agent A to retry.Engine: Gemini 2.0 Flash (Strict Prompting).📊 The "Gauntlet": Performance BenchmarkI subjected the system to a regression suite of 3 distinct failure modes. It achieved a 100% Success Rate with zero human intervention.Failure ModeBug TypeAgent BehaviorTime-to-FixStatusMissing LibImportErrorInstalled dependency via pip~2.9s✅ PASSEDSyntax ErrorSyntaxErrorParsed trace, inserted colon~2.3s✅ PASSEDLogic CrashZeroDivisionREJECTED 1st attempt → Refactored → APPROVED~5.4s✅ PASSED📉 Cost Efficiency: The entire regression suite runs for <$0.01 using Gemini 2.0 Flash.🛠️ Tech Stack & EngineeringOrchestration: LangGraph (Stateful Multi-Agent Loops)Sandboxing: Docker (Ephemeral Execution Environments)Intelligence: Google Gemini 2.0 Flash (Multimodal Reasoning)Observability: Arize Phoenix (OpenTelemetry Tracing)Notifications: Twilio (Voice Alerts on Success)🔬 Observability (The "X-Ray")Every thought, tool call, and state transition is traced live via Arize Phoenix.Green Checkmarks: Successful reasoning steps.Red Exclamations: Failed attempts (automatically retried).Latency P50: 1.3 seconds.🚀 How to Run1. Clone & InstallBashgit clone [https://github.com/DHRUVBSTHAKUR/resurrector-v2.git](https://github.com/DHRUVBSTHAKUR/resurrector-v2.git)
+2.  **🛡️ Agent B: The Principal Security Engineer (Audit)**
+    * **Role:** The "Eyes." Reviews the PR for security risks (e.g., `rm -rf`, infinite loops).
+    * **Power:** Can **REJECT** the fix and force Agent A to retry.
+    * **Engine:** `Gemini 2.0 Flash` (Strict Prompting).
+
+---
+
+## 📊 The "Gauntlet": Performance Benchmark
+I subjected the system to a regression suite of 3 distinct failure modes. It achieved a **100% Success Rate** with zero human intervention.
+
+| Failure Mode | Bug Type | Agent Behavior | Time-to-Fix | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **Missing Lib** | `ImportError` | Installed dependency via `pip` | **~2.9s** | ✅ PASSED |
+| **Syntax Error** | `SyntaxError` | Parsed trace, inserted colon | **~2.3s** | ✅ PASSED |
+| **Logic Crash** | `ZeroDivision` | **REJECTED** 1st attempt → Refactored → **APPROVED** | **~5.4s** | ✅ PASSED |
+
+> **📉 Cost Efficiency:** The entire regression suite runs for **<$0.01** using Gemini 2.0 Flash.
+
+---
+
+## 🛠️ Tech Stack & Engineering
+* **Orchestration:** [LangGraph](https://langchain-ai.github.io/langgraph/) (Stateful Multi-Agent Loops)
+* **Sandboxing:** [Docker](https://www.docker.com/) (Ephemeral Execution Environments)
+* **Intelligence:** [Google Gemini 2.0 Flash](https://deepmind.google/technologies/gemini/) (Multimodal Reasoning)
+* **Observability:** [Arize Phoenix](https://phoenix.arize.com/) (OpenTelemetry Tracing)
+* **Notifications:** [Twilio](https://www.twilio.com/) (Voice Alerts on Success)
+
+## 🔬 Observability (The "X-Ray")
+Every thought, tool call, and state transition is traced live via **Arize Phoenix**.
+
+* **Green Checkmarks:** Successful reasoning steps.
+* **Red Exclamations:** Failed attempts (automatically retried).
+* **Latency P50:** 1.3 seconds.
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone & Install
+```bash
+git clone [https://github.com/DHRUVBSTHAKUR/resurrector-v2.git](https://github.com/DHRUVBSTHAKUR/resurrector-v2.git)
 cd resurrector-v2
 uv sync  # Installs dependencies fast
-2. Configure SecretsCreate a .env file:Ini, TOMLGOOGLE_API_KEY="your_gemini_key"
+
+## 2. Configure Secrets
+
+Create a `.env` file:
+
+```ini
+GOOGLE_API_KEY="your_gemini_key"
 TWILIO_ACCOUNT_SID="optional"
 TWILIO_AUTH_TOKEN="optional"
-3. Unleash the AgentsBashuv run benchmark.py
-🔮 Roadmap[x] Self-Healing Loop: Logic error rejection and retry.[x] Secure Sandbox: Docker containerization.[x] SOTA Speed: Migration to Gemini 2.0 Flash.[ ] Voice Mode: Call the on-call engineer when a fix is merged (Twilio integration ready).[ ] GitHub Integration: Auto-open PRs on repository issues.📄 LicenseThis project is open-source and available under the MIT License.<div align="center">Engineered by Dhruv Bhagat Singh ThakurBuilding the future of Autonomous Infrastructure.</div>
+
+
+## 3. Unleash the Agents
+
+```bash
+uv run benchmark.py
+```
+
+## 🔮 Roadmap
+
+- [x] Self-Healing Loop: Logic error rejection and retry
+- [x] Secure Sandbox: Docker containerization
+- [x] SOTA Speed: Migration to Gemini 2.0 Flash
+- [ ] Voice Mode: Call the on-call engineer when a fix is merged (Twilio integration ready)
+- [ ] GitHub Integration: Auto-open PRs on repository issues
