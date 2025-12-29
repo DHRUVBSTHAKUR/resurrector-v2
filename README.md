@@ -82,7 +82,7 @@ I subjected the system to a regression suite of 3 distinct failure modes. It ach
 * **Notifications:** [Twilio](https://www.twilio.com/) (Voice Alerts on Success)
 
 <details>
-<summary>📂 View Project Structure</summary>
+<summary>##📂 View Project Structure</summary>
 
 ```bash
 resurrector-v2/
