@@ -147,3 +147,13 @@ uv run benchmark.py
 ## 📜 License
 
 This project is open-source and available under the [MIT License](LICENSE).
+
+## 👤 Author
+
+**Dhruv Bhagat Singh Thakur**
+*2nd Year B.Tech CSE (Bioinformatics) | AI & Systems Researcher*
+* **LinkedIn:** [dhruvbsthakur](https://www.linkedin.com/in/dhruvbsthakur/)
+* **GitHub:** [@DHRUVBSTHAKUR](https://github.com/DHRUVBSTHAKUR)
+* **Email:** [dhruvbsthakur@gmail.com](mailto:dhruvbsthakur@gmail.com)
+
+*Built with ❤️ for the future of Autonomous DevOps.*
