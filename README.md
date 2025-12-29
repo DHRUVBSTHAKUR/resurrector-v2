@@ -81,8 +81,8 @@ I subjected the system to a regression suite of 3 distinct failure modes. It ach
 * **Observability:** [Arize Phoenix](https://phoenix.arize.com/) (OpenTelemetry Tracing)
 * **Notifications:** [Twilio](https://www.twilio.com/) (Voice Alerts on Success)
 
-<details>
-<summary>##📂 View Project Structure</summary>
+
+## 📂 Project Structure
 
 ```bash
 resurrector-v2/
@@ -93,7 +93,7 @@ resurrector-v2/
 ├── main.py             # Entry point (LangGraph orchestration)
 └── pyproject.toml      # UV dependency management
 ```
-</details>
+
 
 ## 🔬 Observability (The "X-Ray")
 Every thought, tool call, and state transition is traced live via **Arize Phoenix**.
