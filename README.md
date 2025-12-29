@@ -72,3 +72,27 @@ Every thought, tool call, and state transition is traced live via **Arize Phoeni
 git clone [https://github.com/DHRUVBSTHAKUR/resurrector-v2.git](https://github.com/DHRUVBSTHAKUR/resurrector-v2.git)
 cd resurrector-v2
 uv sync  # Installs dependencies fast
+
+## 2. Configure Secrets
+
+Create a `.env` file:
+
+```ini
+GOOGLE_API_KEY="your_gemini_key"
+TWILIO_ACCOUNT_SID="optional"
+TWILIO_AUTH_TOKEN="optional"
+
+
+## 3. Unleash the Agents
+
+```bash
+uv run benchmark.py
+```
+
+## 🔮 Roadmap
+
+- [x] Self-Healing Loop: Logic error rejection and retry
+- [x] Secure Sandbox: Docker containerization
+- [x] SOTA Speed: Migration to Gemini 2.0 Flash
+- [ ] Voice Mode: Call the on-call engineer when a fix is merged (Twilio integration ready)
+- [ ] GitHub Integration: Auto-open PRs on repository issues
