@@ -16,7 +16,7 @@
 ### 🎥 Watch Level 4 Autonomy in Action
 *The agent detects a `ZeroDivisionError`, attempts a fix, gets REJECTED by the Security Auditor, auto-corrects, and passes on the second try.*
 
-![Resurrector Demo](https://github.com/DHRUVBSTHAKUR/resurrector-v2/issues/1#issue-3768218921)
+![Resurrector Demo](https://private-user-images.githubusercontent.com/170853195/530822594-c708531f-c858-4886-9788-4e73dbd5bc58.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjcwMzkzMDIsIm5iZiI6MTc2NzAzOTAwMiwicGF0aCI6Ii8xNzA4NTMxOTUvNTMwODIyNTk0LWM3MDg1MzFmLWM4NTgtNDg4Ni05Nzg4LTRlNzNkYmQ1YmM1OC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIyOVQyMDEwMDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NzcyZTdiOTdhZWVlZGQwMWQ5YTYzMWM3MWUwZThiN2E5YzJiYWZlNzVjYTM5Y2E5NjI0NDA4YjY5ZTgxODQ2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.7QM_ZIB9V9uoPpzYckI8DZGOJOgt_lX-gaJLEV-TytM)
 
 </div>
 
@@ -29,6 +29,19 @@ Modern CI/CD pipelines are fragile. A missing dependency, a forgotten colon, or 
 ## 🧠 System Architecture (Level 4 Autonomy)
 
 This isn't a simple chatbot. It is a **Self-Correcting Reasoning Loop** built on **LangGraph**.
+
+```mermaid
+graph TD
+    Failure([🔥 Pipeline Failure]) --> Junior[👷‍♂️ Junior Agent\n(Execution)]
+    Junior -->|Reads Logs & Edits Code| Sandbox[🐳 Docker Sandbox]
+    Sandbox -->|Returns stdout/stderr| Junior
+    Junior -->|Submits Fix Proposal| Security{🛡️ Security Audit\n(Principal Engineer)}
+    Security -->|❌ REJECT (Unsafe/Untested)| Junior
+    Security -->|✅ APPROVE| Merge([🚀 Merge Fix & Notify])
+    
+    style Junior fill:#e1f5fe,stroke:#01579b,color:#000
+    style Security fill:#fff9c4,stroke:#fbc02d,color:#000
+    style Sandbox fill:#f3e5f5,stroke:#4a148c,color:#000
 
 ### 🎭 The Cast
 1.  **👷‍♂️ Agent A: The Junior DevOps (Execution)**
