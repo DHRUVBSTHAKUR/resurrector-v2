@@ -31,17 +31,21 @@ Modern CI/CD pipelines are fragile. A missing dependency, a forgotten colon, or 
 This isn't a simple chatbot. It is a **Self-Correcting Reasoning Loop** built on **LangGraph**.
 
 ```mermaid
-flowchart TB
-    Failure["🔥 Pipeline Failure"] --> Junior["👨‍💼 Junior Agent<br>Execution"]
-    Junior -- Reads Logs & Edits Code --> Sandbox["🐳 Docker Sandbox"]
-    Sandbox -- Returns stdout/stderr --> Junior
-    Junior -- Submits Fix Proposal --> Security["🛡️ Security Audit<br>Principal Engineer"]
-    Security -- REJECT Unsafe/Untested --> Junior
-    Security -- APPROVE --> Merge["🚀 Merge Fix & Notify"]
+flowchart TD
+    %% Shapes: ([Round]), [Rect], {Rhombus}
+    Failure(["🔥 Pipeline Failure"]) --> Junior["👨‍💼 Junior Agent<br/>(Execution)"]
+    
+    Junior -- "Reads Logs & Edits Code" --> Sandbox["🐳 Docker Sandbox"]
+    Sandbox -- "Returns stdout/stderr" --> Junior
+    
+    Junior -- "Submits Fix Proposal" --> Security{"🛡️ Security Audit<br/>(Principal Engineer)"}
+    
+    Security -- "❌ REJECT (Unsafe/Untested)" --> Junior
+    Security -- "✅ APPROVE" --> Merge(["🚀 Merge Fix & Notify"])
 
     style Junior fill:#e1f5fe,stroke:#01579b,color:#000
-    style Sandbox fill:#f3e5f5,stroke:#4a148c,color:#000
     style Security fill:#fff9c4,stroke:#fbc02d,color:#000
+    style Sandbox fill:#f3e5f5,stroke:#4a148c,color:#000
 ```
 
 ### 🎭 The Cast
