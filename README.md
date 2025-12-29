@@ -92,6 +92,7 @@ resurrector-v2/
 ├── benchmarks/         # The "Gauntlet" regression suite
 ├── main.py             # Entry point (LangGraph orchestration)
 └── pyproject.toml      # UV dependency management
+```
 </details>
 
 ## 🔬 Observability (The "X-Ray")
