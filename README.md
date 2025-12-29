@@ -77,9 +77,21 @@ I subjected the system to a regression suite of 3 distinct failure modes. It ach
 ## 🛠️ Tech Stack & Engineering
 * **Orchestration:** [LangGraph](https://langchain-ai.github.io/langgraph/) (Stateful Multi-Agent Loops)
 * **Sandboxing:** [Docker](https://www.docker.com/) (Ephemeral Execution Environments)
-* **Intelligence:** [Google Gemini 2.0 Flash](https://deepmind.google/technologies/gemini/) (Multimodal Reasoning)
+* **Intelligence:** [Google Gemini 2.0 Flash](https://deepmind.google/technologies/gemini/) (Multimodal Reasoning)— Chosen for its sub-second latency and massive context window, allowing agents to parse thousands of log lines for <$0.01 per run.
 * **Observability:** [Arize Phoenix](https://phoenix.arize.com/) (OpenTelemetry Tracing)
 * **Notifications:** [Twilio](https://www.twilio.com/) (Voice Alerts on Success)
+
+<details>
+<summary>📂 View Project Structure</summary>
+
+```bash
+resurrector-v2/
+├── agents/             # Logic for Junior and Senior Agents
+├── sandbox/            # Docker container configurations
+├── tools/              # Custom tools (File edit, Linting, Shell)
+├── benchmarks/         # The "Gauntlet" regression suite
+├── main.py             # Entry point (LangGraph orchestration)
+└── pyproject.toml      # UV dependency management
 
 ## 🔬 Observability (The "X-Ray")
 Every thought, tool call, and state transition is traced live via **Arize Phoenix**.
@@ -91,6 +103,12 @@ Every thought, tool call, and state transition is traced live via **Arize Phoeni
 ---
 
 ## 🚀 How to Run
+
+### 🛠️ Prerequisites
+Before running the agents, ensure you have:
+1. **Docker Desktop** installed and running (for the sandboxed execution environment).
+2. **Python 3.10+** installed.
+3. **uv** package manager (`pip install uv`).
 
 ### 1. Clone & Install
 ```bash
@@ -104,6 +122,8 @@ Create a `.env` file:
 
 ```ini
 GOOGLE_API_KEY="your_gemini_key"
+
+# Optional: Receive a real-time phone call when a fix is deployed 📞
 TWILIO_ACCOUNT_SID="optional"
 TWILIO_AUTH_TOKEN="optional"
 
@@ -119,5 +139,9 @@ uv run benchmark.py
 - [x] Self-Healing Loop: Logic error rejection and retry
 - [x] Secure Sandbox: Docker containerization
 - [x] SOTA Speed: Migration to Gemini 2.0 Flash
-- [ ] Voice Mode: Call the on-call engineer when a fix is merged (Twilio integration ready)
-- [ ] GitHub Integration: Auto-open PRs on repository issues
+- [x] Voice Mode: Call the on-call engineer when a fix is merged (Twilio integration ready)
+- [x] GitHub Integration: Auto-open PRs on repository issues
+
+## 📜 License
+
+This project is open-source and available under the [MIT License](LICENSE).
