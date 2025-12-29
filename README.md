@@ -143,14 +143,11 @@ uv run benchmark.py
 ```
 
 ## 🔮 Roadmap
-
-- [x] Self-Healing Loop: Logic error rejection and retry
-- [x] Secure Sandbox: Docker containerization
-- [x] SOTA Speed: Migration to Gemini 2.0 Flash
-- [x] Voice Mode: Call the on-call engineer when a fix is merged (Twilio integration ready)
-- [x] GitHub Integration: Auto-open PRs on repository issues
-- [ ] **v3.0:** Web Dashboard (Next.js) for real-time agent monitoring
-- [ ] **Expansion:** Support for compiled languages (C++/Rust)
+- [x] **Self-Healing Loop:** Logic error rejection and retry
+- [x] **Secure Sandbox:** Docker containerization
+- [x] **Observability Dashboard:** Real-time tracing with Arize Phoenix
+- [ ] **IDE Extension:** VS Code sidebar for one-click fixes
+- [ ] **Multi-Language Support:** Expanding to Rust and Go
 
 ## 📜 License
 
