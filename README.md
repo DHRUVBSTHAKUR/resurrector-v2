@@ -16,7 +16,7 @@
 ### 🎥 Watch Level 4 Autonomy in Action
 *The agent intercepts a critical Runtime Crash (ZeroDivisionError), attempts a fix, negotiates with the Security Auditor to ensure safety, and hot-patches the production code without human intervention.*
 
-![Resurrector Demo](https://private-user-images.githubusercontent.com/170853195/530822594-c708531f-c858-4886-9788-4e73dbd5bc58.gif?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjcwMzkzMDIsIm5iZiI6MTc2NzAzOTAwMiwicGF0aCI6Ii8xNzA4NTMxOTUvNTMwODIyNTk0LWM3MDg1MzFmLWM4NTgtNDg4Ni05Nzg4LTRlNzNkYmQ1YmM1OC5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjI5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIyOVQyMDEwMDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NzcyZTdiOTdhZWVlZGQwMWQ5YTYzMWM3MWUwZThiN2E5YzJiYWZlNzVjYTM5Y2E5NjI0NDA4YjY5ZTgxODQ2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.7QM_ZIB9V9uoPpzYckI8DZGOJOgt_lX-gaJLEV-TytM)
+![Resurrector Demo](assets/demo-video.gif)
 
 </div>
 
